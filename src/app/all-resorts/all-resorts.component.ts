@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IResort} from '../../../models/models';
+import {IResort} from '../../models/models';
 import {getAllResorts} from '../../API/API';
 
 const SELECTED_CLASS = 'selected';

@@ -1,1 +1,12 @@
+app-all-resorts{
+  display: flex;
+}
+
+.resorts {
+  background-color: aqua;
+}
+
+.categories{
+  background-color: antiquewhite;
+}
 

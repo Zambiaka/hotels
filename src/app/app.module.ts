@@ -6,8 +6,9 @@ import {AllResortsComponent} from './all-resorts/all-resorts.component';
 import {ResortInfoComponent} from './resort-info/resort-info.component';
 import {MaterialModule} from './modules/material.module';
 import {GetCategoriesPipe} from './pipes/get-categories.pipe';
-import {IResort} from '../../models/models';
+import {IResort} from '../models/models';
 import {getAllResorts} from '../API/API';
+import { CategoryFilterPipe } from './pipes/category-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {getAllResorts} from '../API/API';
     AllResortsComponent,
     ResortInfoComponent,
     GetCategoriesPipe,
+    CategoryFilterPipe,
   ],
   imports: [
     BrowserModule,

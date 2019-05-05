@@ -1,10 +1,20 @@
 <div *ngIf="resorts; else spinner">
-  <mat-list *ngFor="let category of resorts|getCategories">
+  <mat-list class="categories" *ngFor="let category of resorts|getCategories">
     <mat-list-item (click)="setActiveCategory($event.target, category)">{{category}}</mat-list-item>
   </mat-list>
 </div>
 
+<mat-list class="resorts" *ngFor="let resort of resorts|categoryFilter:activeCategory">
+  <mat-list-item>
+    {{resort.name}}
+  </mat-list-item>
+</mat-list>
 
 <ng-template #spinner>
   <img src="../../assets/spinner.png" alt="loading" class="spinner">
 </ng-template>
+
+
+<!--<div>-->
+<!--<img src="{{resort.imageURL}}" alt="{{resort.name}}">-->
+<!--</div>-->
