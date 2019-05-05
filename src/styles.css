@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner{
+  animation: spinner .9s linear infinite;
+  height: 32px;
+}
+
+.selected {
+  color: rebeccapurple;
+}
