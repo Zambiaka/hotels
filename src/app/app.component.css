@@ -2,4 +2,15 @@ mat-grid-tile {
   background: lightblue;
 }
 
+.content {
+  display: flex;
+}
 
+app-all-resorts, app-resort-info {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+
+.resort-name {
+  font-size: 2rem;
+}

@@ -5,15 +5,11 @@
   </h1>
 </div>
 
+<div class="content">
+<app-all-resorts (setResort)="setResort($event)"></app-all-resorts>
+<app-resort-info [resort]="resort"></app-resort-info>
+</div>
 
-<mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>
-    <app-all-resorts></app-all-resorts>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-resort-info></app-resort-info>
-  </mat-grid-tile>
-</mat-grid-list>
 
 
 

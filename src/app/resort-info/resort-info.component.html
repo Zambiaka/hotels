@@ -1,3 +1,8 @@
-<p>
-  resort-info works!
-</p>
+<h2 class="resort-name">{{resort.name}}</h2>
+<img class="resort-preview" alt="{{resort.name}}" src="{{resort.imageURL}}">
+<div class="info">
+  <div class="resort-rating">
+    <span *appTimes="3" class="star"></span>
+  </div>
+</div>
+

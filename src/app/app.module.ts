@@ -9,6 +9,7 @@ import {GetCategoriesPipe} from './pipes/get-categories.pipe';
 import {IResort} from '../models/models';
 import {getAllResorts} from '../API/API';
 import { CategoryFilterPipe } from './pipes/category-filter.pipe';
+import { RepeatDirective } from './directives/repeat.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CategoryFilterPipe } from './pipes/category-filter.pipe';
     ResortInfoComponent,
     GetCategoriesPipe,
     CategoryFilterPipe,
+    RepeatDirective,
   ],
   imports: [
     BrowserModule,

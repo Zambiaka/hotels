@@ -1,12 +1,23 @@
-app-all-resorts{
-  display: flex;
+app-all-resorts {
+  width: 100%;
+}
+
+.categories .mat-list-item {
+  display: inline-block;
+  height: 48px;
+  width: auto;
+  background-color: aquamarine;
 }
 
 .resorts {
   background-color: aqua;
 }
 
-.categories{
+.categories {
   background-color: antiquewhite;
+}
+
+ul.resorts{
+
 }
 

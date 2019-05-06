@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IResort} from '../models/models';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Best Resorts';
+
+  public resort: IResort;
+
+  public setResort(resort: IResort): void {
+    this.resort = resort;
+  }
 }

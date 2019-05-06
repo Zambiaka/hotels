@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {IResort} from '../../models/models';
 import {getAllResorts} from '../../API/API';
 
@@ -11,11 +11,12 @@ const SELECTED_CLASS = 'selected';
 })
 export class AllResortsComponent implements OnInit {
   public resorts: IResort[];
+
   public activeCategory: string;
   public activeCategoryEl: HTMLLIElement;
 
-  constructor() {
-  }
+  @Output()
+  public setResort: EventEmitter<IResort> = new EventEmitter();
 
   ngOnInit() {
     setTimeout(() => {
@@ -23,12 +24,20 @@ export class AllResortsComponent implements OnInit {
     }, 1000);
   }
 
+  // Event handlers
   public setActiveCategory(target: HTMLLIElement, category: string): void {
     this.setSelected(target);
     this.activeCategory = category;
     console.log(`Active category is ${category}`);
   }
 
+
+  // TODO set selected element
+  public setSelectedResort(resort: IResort): void {
+    this.setResort.emit(resort);
+  }
+
+  // Private methods
   private setSelected(selectedElement: HTMLLIElement) {
     if (this.activeCategoryEl) {
       this.activeCategoryEl.classList.remove(SELECTED_CLASS);
