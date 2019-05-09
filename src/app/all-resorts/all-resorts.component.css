@@ -2,22 +2,26 @@ app-all-resorts {
   width: 100%;
 }
 
+mat-list.categories{
+  width: 100%;
+}
+
 .categories .mat-list-item {
+  margin: 4px;
+  border-radius:4px;
   display: inline-block;
-  height: 48px;
   width: auto;
-  background-color: aquamarine;
+  background-color: rgba(0,13,203,0.6);
 }
 
-.resorts {
-  background-color: aqua;
-}
-
-.categories {
-  background-color: antiquewhite;
-}
 
 ul.resorts{
-
+  list-style: none;
+  padding: 4px;
 }
 
+ul.resorts>li{
+  background-color: rgba(89, 117, 255, 0.6);
+  padding: 8px;
+  margin: 4px 0;
+}

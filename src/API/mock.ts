@@ -2,7 +2,7 @@ export const resorts = [{
   _id: 1,
   category: 'Hotels',
   name: 'Hapuna Beach Prince Hotel',
-  rating: '5',
+  rating: 5,
   contactInfo: {
     phoneNumber: '937-99-92',
     email: 'prince@gmail.com',
@@ -13,7 +13,7 @@ export const resorts = [{
     _id: 2,
     category: 'Hotels',
     name: 'Travaasa Hana',
-    rating: '4',
+    rating: 4,
     contactInfo: {
       phoneNumber: '937-99-92',
       email: 'travaasa@gmail.com',
@@ -24,7 +24,7 @@ export const resorts = [{
     _id: 3,
     category: 'Apartments',
     name: 'Hanalei Colony Resort',
-    rating: '3',
+    rating: 3,
     contactInfo: {
       phoneNumber: '937-99-92',
       email: 'hanalei@gmail.com',
@@ -35,7 +35,7 @@ export const resorts = [{
     _id: 4,
     category: 'Apartments',
     name: 'Waimea Plantation Cottages',
-    rating: '4',
+    rating: 4,
     contactInfo: {
       phoneNumber: '937-99-92',
       email: 'waimea@gmail.com',
@@ -46,7 +46,7 @@ export const resorts = [{
     _id: 5,
     category: 'Hostels',
     name: 'Kauai Shores',
-    rating: '5',
+    rating: 5,
     contactInfo: {
       phoneNumber: '937-99-92',
       email: 'kauai@gmail.com',
@@ -57,7 +57,7 @@ export const resorts = [{
     _id: 5,
     category: 'Hostels',
     name: 'St. Regis Princeville Resort',
-    rating: '4',
+    rating: 4,
     contactInfo: {
       phoneNumber: '937-99-92',
       email: 'regis@gmail.com',

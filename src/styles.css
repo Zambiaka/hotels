@@ -8,9 +8,18 @@
 .spinner{
   animation: spinner .9s linear infinite;
   height: 32px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
 }
 
-.selected {
-  color: rebeccapurple;
+.active {
+  background-color:  rgba(232, 153, 197, 0.62) !important;
 }
 
+div, li{
+  border-radius:4px;
+}

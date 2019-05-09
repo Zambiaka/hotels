@@ -4,12 +4,12 @@ import {NgModule, OnInit} from '@angular/core';
 import {AppComponent} from './app.component';
 import {AllResortsComponent} from './all-resorts/all-resorts.component';
 import {ResortInfoComponent} from './resort-info/resort-info.component';
-import {MaterialModule} from './modules/material.module';
-import {GetCategoriesPipe} from './pipes/get-categories.pipe';
+import {MaterialModule} from '../modules/material.module';
+import {GetCategoriesPipe} from '../pipes/get-categories.pipe';
 import {IResort} from '../models/models';
 import {getAllResorts} from '../API/API';
-import { CategoryFilterPipe } from './pipes/category-filter.pipe';
-import { RepeatDirective } from './directives/repeat.directive';
+import { CategoryFilterPipe } from '../pipes/category-filter.pipe';
+import { AppCreateMultipleDirective } from '../directives/createMultiple.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { RepeatDirective } from './directives/repeat.directive';
     ResortInfoComponent,
     GetCategoriesPipe,
     CategoryFilterPipe,
-    RepeatDirective,
+    AppCreateMultipleDirective,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,9 @@
 <img class="resort-preview" alt="{{resort.name}}" src="{{resort.imageURL}}">
 <div class="info">
   <div class="resort-rating">
-    <span *appTimes="3" class="star"></span>
+    <span *appCreateMultiple="resort.rating" class="star"></span>
   </div>
+  <div>{{resort.contactInfo.email}}</div>
+  <div>{{resort.contactInfo.phoneNumber}}</div>
 </div>
 

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {IResort} from '../../models/models';
 import {getAllResorts} from '../../API/API';
 
@@ -11,38 +11,53 @@ const SELECTED_CLASS = 'selected';
 })
 export class AllResortsComponent implements OnInit {
   public resorts: IResort[];
-
   public activeCategory: string;
-  public activeCategoryEl: HTMLLIElement;
+  public selectedResort: IResort;
 
   @Output()
   public setResort: EventEmitter<IResort> = new EventEmitter();
+  @Output()
+  public categoryUpdated: EventEmitter<IResort> = new EventEmitter();
 
   ngOnInit() {
     setTimeout(() => {
       this.resorts = getAllResorts() as unknown as IResort[];
+
+      // Set initial selection
+      if (this.resorts.length) {
+        this.setActiveCategory(this.resorts[0].category);
+      }
     }, 1000);
   }
 
   // Event handlers
-  public setActiveCategory(target: HTMLLIElement, category: string): void {
-    this.setSelected(target);
+  public setActiveCategory(category: string): void {
     this.activeCategory = category;
-    console.log(`Active category is ${category}`);
+    this.categoryUpdated.emit(this.selectedResort);
+
+    // Select first result by default
+    const firstResort: IResort = this.getFirstFromCategory(category);
+    if (firstResort) {
+      this.setSelectedResort(firstResort);
+    }
   }
 
-
-  // TODO set selected element
   public setSelectedResort(resort: IResort): void {
     this.setResort.emit(resort);
+    this.selectedResort = resort;
   }
 
-  // Private methods
-  private setSelected(selectedElement: HTMLLIElement) {
-    if (this.activeCategoryEl) {
-      this.activeCategoryEl.classList.remove(SELECTED_CLASS);
-    }
-    selectedElement.classList.add(SELECTED_CLASS);
-    this.activeCategoryEl = selectedElement;
+  public isActiveCategory(category: string): boolean {
+    return category === this.activeCategory;
   }
+
+  public isSelectedResort(resort: IResort): boolean {
+    return resort === this.selectedResort;
+  }
+
+  private getFirstFromCategory(category: string): IResort {
+    return this.resorts.find((res) => res.category === category);
+  }
+
+
 }
