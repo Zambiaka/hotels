@@ -10,6 +10,7 @@ import {IResort} from '../models/models';
 import {getAllResorts} from '../API/API';
 import { CategoryFilterPipe } from '../pipes/category-filter.pipe';
 import { AppCreateMultipleDirective } from '../directives/createMultiple.directive';
+import { SocialComponent } from './social/social.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AppCreateMultipleDirective } from '../directives/createMultiple.directi
     GetCategoriesPipe,
     CategoryFilterPipe,
     AppCreateMultipleDirective,
+    SocialComponent,
   ],
   imports: [
     BrowserModule,

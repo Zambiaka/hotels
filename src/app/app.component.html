@@ -8,6 +8,7 @@
 <div class="content">
 <app-all-resorts (setResort)="setResort($event)"></app-all-resorts>
 <app-resort-info *ngIf="resort" [resort]="resort"></app-resort-info>
+<app-social *ngIf="resort" [resort]="resort"></app-social>
 </div>
 
 
