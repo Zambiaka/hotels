@@ -6,9 +6,9 @@
 </div>
 
 <div class="content">
-<app-all-resorts (setResort)="setResort($event)"></app-all-resorts>
-<app-resort-info *ngIf="resort" [resort]="resort"></app-resort-info>
-<app-social *ngIf="resort" [resort]="resort"></app-social>
+  <app-all-resorts></app-all-resorts>
+  <app-resort-info *ngIf="resort"></app-resort-info>
+  <app-social *ngIf="resort"></app-social>
 </div>
 
 

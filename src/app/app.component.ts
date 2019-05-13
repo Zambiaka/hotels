@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {HotelsService} from './hotels.service';
 import {IResort} from '../models/models';
 
 @Component({
@@ -7,11 +8,10 @@ import {IResort} from '../models/models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Best Resorts';
+  constructor(public hotelsService: HotelsService) {
+  }
 
-  public resort: IResort;
-
-  public setResort(resort: IResort): void {
-    this.resort = resort;
+  get resort(): IResort {
+    return this.hotelsService.selectedResort;
   }
 }

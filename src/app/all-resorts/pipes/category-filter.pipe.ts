@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {IResort} from '../models/models';
+import {IResort} from '../../../models/models';
 
 @Pipe({
   name: 'categoryFilter'

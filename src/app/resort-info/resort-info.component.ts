@@ -1,16 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {IResort} from '../../models/models';
+import {HotelsService} from '../hotels.service';
 
 @Component({
   selector: 'app-resort-info',
   templateUrl: './resort-info.component.html',
   styleUrls: ['./resort-info.component.css'],
 })
-export class ResortInfoComponent implements OnInit {
+export class ResortInfoComponent {
+  constructor(public hotelsService: HotelsService) {
+  }
 
-  @Input('resort')
-  public resort: IResort;
-
-  ngOnInit() {
+  get resort(): IResort {
+    return this.hotelsService.selectedResort;
   }
 }

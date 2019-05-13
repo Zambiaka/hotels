@@ -1,6 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IResort} from '../../models/models';
-import {getAllResorts} from '../../API/API';
+import {HotelsService} from '../hotels.service';
 
 
 @Component({
@@ -11,16 +11,21 @@ import {getAllResorts} from '../../API/API';
 export class AllResortsComponent implements OnInit {
   public resorts: IResort[];
   public activeCategory: string;
-  public selectedResort: IResort;
 
-  @Output()
-  public setResort: EventEmitter<IResort> = new EventEmitter();
-  @Output()
-  public categoryUpdated: EventEmitter<IResort> = new EventEmitter();
+  constructor(public hotelsService: HotelsService) {
+  }
+
+  get selectedResort(): IResort {
+    return this.hotelsService.selectedResort;
+  }
+
+  set selectedResort(value: IResort) {
+    this.hotelsService.selectedResort = value;
+  }
 
   ngOnInit() {
     setTimeout(() => {
-      this.resorts = getAllResorts() as unknown as IResort[];
+      this.resorts = this.hotelsService.getResorts();
 
       // Set initial selection
       if (this.resorts.length) {
@@ -32,17 +37,15 @@ export class AllResortsComponent implements OnInit {
   // Event handlers
   public setActiveCategory(category: string): void {
     this.activeCategory = category;
-    this.categoryUpdated.emit(this.selectedResort);
 
     // Select first result by default
     const firstResort: IResort = this.getFirstFromCategory(category);
     if (firstResort) {
-      this.setSelectedResort(firstResort);
+      this.selectedResort = firstResort;
     }
   }
 
   public setSelectedResort(resort: IResort): void {
-    this.setResort.emit(resort);
     this.selectedResort = resort;
   }
 
@@ -57,6 +60,4 @@ export class AllResortsComponent implements OnInit {
   private getFirstFromCategory(category: string): IResort {
     return this.resorts.find((res) => res.category === category);
   }
-
-
 }

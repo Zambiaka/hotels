@@ -1,16 +1,15 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, OnInit} from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AllResortsComponent} from './all-resorts/all-resorts.component';
 import {ResortInfoComponent} from './resort-info/resort-info.component';
 import {MaterialModule} from '../modules/material.module';
-import {GetCategoriesPipe} from '../pipes/get-categories.pipe';
-import {IResort} from '../models/models';
-import {getAllResorts} from '../API/API';
-import { CategoryFilterPipe } from '../pipes/category-filter.pipe';
-import { AppCreateMultipleDirective } from '../directives/createMultiple.directive';
-import { SocialComponent } from './social/social.component';
+import {GetCategoriesPipe} from './all-resorts/pipes/get-categories.pipe';
+import {CategoryFilterPipe} from './all-resorts/pipes/category-filter.pipe';
+import {AppCreateMultipleDirective} from '../shared/directives/createMultiple.directive';
+import {SocialComponent} from './social/social.component';
+import {HotelsService} from './hotels.service';
 
 @NgModule({
   declarations: [
@@ -26,14 +25,8 @@ import { SocialComponent } from './social/social.component';
     BrowserModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [HotelsService],
   bootstrap: [AppComponent],
 })
-export class AppModule implements OnInit {
-  public resorts: IResort[];
-
-  ngOnInit(): void {
-    this.resorts = getAllResorts() as unknown as IResort[];
-  }
-
+export class AppModule {
 }
