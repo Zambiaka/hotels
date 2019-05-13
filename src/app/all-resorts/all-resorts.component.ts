@@ -1,8 +1,7 @@
-import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {IResort} from '../../models/models';
 import {getAllResorts} from '../../API/API';
 
-const SELECTED_CLASS = 'selected';
 
 @Component({
   selector: 'app-all-resorts',

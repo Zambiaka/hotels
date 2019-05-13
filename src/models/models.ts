@@ -5,6 +5,7 @@ export interface IResort {
   rating: string;
   contactInfo: IContactInfo;
   imageURL: string;
+  description: string;
 }
 
 export interface IContactInfo {

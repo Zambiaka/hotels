@@ -4,6 +4,7 @@
 </mat-list>
 
 
+
 <ul class="resorts">
   <li  [ngClass]="{'active' : isSelectedResort(resort)}" *ngFor="let resort of resorts|categoryFilter:activeCategory" (click)="setSelectedResort(resort)">
     {{resort.name}}
